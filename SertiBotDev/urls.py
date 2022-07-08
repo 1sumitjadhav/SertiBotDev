@@ -23,4 +23,5 @@ urlpatterns = [
     path('about-us/',views.aboutUS),
     path('course/',views.course),
     path('userform/',views.userForm, name="userform"),
+    path('checkdata/',views.checkdata,name="checkdata")
 ]

@@ -123,3 +123,9 @@ STATICFILES_DIRS = [
     BASE_DIR, "static"
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mycareteam.tech'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'billing@mycareteam.tech'
+EMAIL_HOST_PASSWORD = 'KY)!zhw_6":3'
+EMAIL_USE_SSL = True
