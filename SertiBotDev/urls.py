@@ -14,8 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from SertiBotDev import views
+from django.db import router
+from django.urls import path , include
+
+# from SertiBotDev.coupons.models import Coupons1
+# from SertiBotDev.coupons.viewsets import Couponsviewset
+from . import views
+from .router import router
+
+
+# from rest_framework import routers       
+# router = routers.DefaultRouter()
+# router.register(r'api/' ,  basename='Coupons1')  
 
 urlpatterns = [
     path('',views.homePage),
@@ -23,4 +33,8 @@ urlpatterns = [
     path('about-us/',views.aboutUS),
     path('course/',views.course),
     path('userform/',views.userForm, name="userform"),
+    path('api/',include(router.urls)),
+    # path('<int:pk>/',views.details),
+    # path('details/',views.details),
+    
 ]
