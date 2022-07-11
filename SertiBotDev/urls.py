@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from SertiBotDev import views
+from login.views import loginaction
+from signup.views import signupaction
 
 urlpatterns = [
     path('',views.homePage),
@@ -23,4 +25,6 @@ urlpatterns = [
     path('about-us/',views.aboutUS),
     path('course/',views.course),
     path('userform/',views.userForm, name="userform"),
+    path('login/',loginaction),
+    path('signup',signupaction),
 ]
