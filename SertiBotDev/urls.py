@@ -25,6 +25,10 @@ urlpatterns = [
     path('about-us/',views.aboutUS),
     path('course/',views.course),
     path('userform/',views.userForm, name="userform"),
+<<<<<<< HEAD
     path('login/',loginaction),
     path('signup',signupaction),
+=======
+    path('checkdata/',views.checkdata,name="checkdata")
+>>>>>>> 69027ec2621c2e653934e1acfb3e9db15dcc54a7
 ]
