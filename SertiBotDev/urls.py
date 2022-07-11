@@ -34,6 +34,7 @@ urlpatterns = [
     path('course/',views.course),
     path('userform/',views.userForm, name="userform"),
     path('api/',include(router.urls)),
+    path('test/',include('coupons.urls')),
     # path('<int:pk>/',views.details),
     # path('details/',views.details),
     

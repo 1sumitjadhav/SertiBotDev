@@ -7,5 +7,4 @@ class CouponsSerializer(serializers.ModelSerializer):
  
     class Meta:
         model = Coupons1
-        fields = ('coupons2',
-                  'discount')
+        fields = '__all__'
