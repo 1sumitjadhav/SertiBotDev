@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from SertiBotDev import views
 from login.views import loginaction
 from signup.views import signupaction
@@ -25,10 +25,7 @@ urlpatterns = [
     path('about-us/',views.aboutUS),
     path('course/',views.course),
     path('userform/',views.userForm, name="userform"),
-<<<<<<< HEAD
+    path('email/',include('Email_handler.urls')),
     path('login/',loginaction),
     path('signup',signupaction),
-=======
-    path('checkdata/',views.checkdata,name="checkdata")
->>>>>>> 69027ec2621c2e653934e1acfb3e9db15dcc54a7
 ]

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="/checkdata/" method="post" enctype="multipart/form-data">
+    <form action="/email/checkdata/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="data_file" id="df">
         <button type="submit">Upload</button>
