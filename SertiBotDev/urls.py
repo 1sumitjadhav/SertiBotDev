@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.db import router
 from django.urls import path , include
+from form.views import couponvalidate
+
 
 from form.views import couponview
 from . import views
@@ -30,5 +32,6 @@ urlpatterns = [
     path('userform/',views.userForm, name="userform"),
     path('coupons/',include('coupons.urls')),
     path('add/',couponview),
+    path('list/',couponvalidate),
     
 ]

@@ -1,18 +1,23 @@
 {% include "header.html" %}
 
+    
+
 <br><br><br>
+
 <form method="post"> {% csrf_token %}
 {{form.as_p}}
-
-<input type="submit" value="save" onclick="submitForm()">    
+<input type="submit" value="save" required>    
 </form>
 
+
+
+<br><br><br>
+<div class="coupons">
+    {% for data in data %}
+    <h4>{{data.coupons2}}</h4> 
+    <h4>{{data.id}}</h4> 
+    {% endfor %}    
+</div>
 <br><br><br>
 
-<script>
-    function submitForm() {
-    document.contact-form.submit();
-    document.contact-form.reset();
-    }
-</script>
 {% include "footer.html" %}
