@@ -6,6 +6,7 @@ from django.core.mail import EmailMessage, get_connection
 import qrcode
 import io
 
+
 def homePage(request):
 #    data={
 #       'title' : 'Home Page'

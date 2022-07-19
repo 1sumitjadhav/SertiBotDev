@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
 # from accounts.views import Login
 
 from .import views
@@ -24,6 +25,11 @@ from .import views
 
 
 
+=======
+from SertiBotDev import views
+from login.views import loginaction
+from signup.views import signupaction
+>>>>>>> 142aa82c495c613cdb0428c501344417a6ad6dc4
 
 urlpatterns = [
     path('',views.homePage),
@@ -32,7 +38,13 @@ urlpatterns = [
     path('course/',views.course),
     # path('welcome/',views.welcome,name='welcome'),
     path('userform/',views.userForm, name="userform"),
+<<<<<<< HEAD
     path('accounts/',include('accounts.urls')),
     
     
+=======
+    path('email/',include('Email_handler.urls')),
+    path('login/',loginaction),
+    path('signup',signupaction),
+>>>>>>> 142aa82c495c613cdb0428c501344417a6ad6dc4
 ]
