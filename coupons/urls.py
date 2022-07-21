@@ -9,6 +9,6 @@ from . import views
 # router.register(r'api/' ,  basename='Coupons1')  
 
 urlpatterns = [
-    path('',views.getData),
-    path('add/',views.additem),
+    # path('',views.getData),
+    # path('add/',views.additem),
 ]

@@ -12,12 +12,22 @@
 
 
 <br><br><br>
+<h3>bulk coupon generator</h3>
+<form method="post">
+    {% csrf_token %}
+    <input type="integer" name="bulk" required>
+    <br>
+    <button type="submit">generate</button>
+</form>
+<br><br><br>
+
+
+
+<br><br><br>
 <div class="coupons">
     {% for data in data %}
-    <h4>{{data.coupons2}}</h4> 
-    <h4>{{data.id}}</h4> 
+    <h4>{{data.coupons2}} ==> {{data.discount}}</h4> 
+    {% comment %} <h4>you got {{data.discount}}% discount</h4>  {% endcomment %}
     {% endfor %}    
 </div>
 <br><br><br>
-
-{% include "footer.html" %}
