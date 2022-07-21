@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from pathlib import Path
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR=Path(__file__).resolve().parent.parent
+LOGIN_REDIRECT_URL=('index/')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -31,15 +34,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
+    # 'django.contrib.admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'rest_framework',
     'form',
     'coupons'
+=======
+    'accounts',
+    'Email_handler',
+>>>>>>> main
 ]
 
 MIDDLEWARE = [
@@ -57,7 +67,7 @@ ROOT_URLCONF = 'SertiBotDev.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR,"templates"],
+        'DIRS': [BASE_DIR,'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,13 +96,23 @@ WSGI_APPLICATION = 'SertiBotDev.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+<<<<<<< HEAD
         'NAME': 'coupons',
         'USER': 'postgres',
         'PASSWORD': 'mudassir',
         'HOST': '127.0.0.1',
+=======
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'database-1.ceouyqjgp0eq.us-east-1.rds.amazonaws.com',
+>>>>>>> main
         'PORT': '5432',
     }
+
 }
+
+AUTH_USER_MODEL="accounts.User"
 
 
 # Password validation
@@ -137,3 +157,9 @@ STATICFILES_DIRS = [
     BASE_DIR, "static"
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mycareteam.tech'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'billing@mycareteam.tech'
+EMAIL_HOST_PASSWORD = 'KY)!zhw_6":3'
+EMAIL_USE_SSL = True
