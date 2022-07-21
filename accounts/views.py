@@ -11,7 +11,8 @@ def index(request):
     return render(request,'index.html')
 
 def register(request):
-    return render(request, 'signup_page.html')
+    return render(request, 'register.html')
+
 
 class student_register(CreateView):
     model = User  
@@ -21,7 +22,7 @@ class student_register(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('/accounts/index')
+        return redirect('index')
 
 class university_register(CreateView):
     model = User  
@@ -31,7 +32,7 @@ class university_register(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('/accounts/index')
+        return redirect('index')
 
 def login_user(request):
     if request.method=='POST':
@@ -42,13 +43,13 @@ def login_user(request):
             user = authenticate(username=username, password=password)
             if user is not None :
                 login(request,user)
-                return redirect('/accounts/index')
+                return redirect('index')
             else:
                 messages.error(request,"Invalid username or password")
         else:
             messages.error(request,"Invalid username or password")
-    return render(request, 'templates/login.html',context={'form':AuthenticationForm()})
+    return render(request, 'login.html',context={'form':AuthenticationForm()})
 
 def logout_user(request):
     logout(request)
-    return redirect('/accounts/index')
+    return redirect('index')

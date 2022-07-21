@@ -42,13 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'accounts',
-=======
-    'login',
-    'signup',
     'Email_handler',
->>>>>>> 142aa82c495c613cdb0428c501344417a6ad6dc4
 ]
 
 MIDDLEWARE = [
@@ -91,8 +86,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        # 'HOST': 'database-1.ceouyqjgp0eq.us-east-1.rds.amazonaws.com',
-        'HOST':'127.0.0.1',
+        'HOST': 'database-1.ceouyqjgp0eq.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 
