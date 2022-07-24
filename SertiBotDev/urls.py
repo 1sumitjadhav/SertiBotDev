@@ -30,7 +30,6 @@ urlpatterns = [
     path('about-us/',views.aboutUS),
     path('course/',views.course),
     path('userform/',views.userForm, name="userform"),
-    # path('coupons/',include('coupons.urls')),
     path('add/',couponview),
     path('list/',couponvalidate),
     
