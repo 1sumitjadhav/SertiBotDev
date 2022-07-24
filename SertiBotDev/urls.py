@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.db import router
 from django.urls import path , include
 from coupons.views import couponvalidate
+from django.urls import path, include
+from accounts.views import index
 
 
 from coupons.views import couponview
@@ -25,8 +27,13 @@ from . import views
 
 
 urlpatterns = [
-    path('',views.homePage),
     path('admin/', admin.site.urls),
+    path('', index ,name='index'),
+    path('accounts/',include('accounts.urls')),
+    path('gen',include('Email_handler.urls')),
+
+    
+    
     path('about-us/',views.aboutUS),
     path('course/',views.course),
     path('userform/',views.userForm, name="userform"),
