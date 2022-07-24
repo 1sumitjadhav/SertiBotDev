@@ -39,7 +39,7 @@ urlpatterns = [
     path('course/',views.course),
     path('userform/',views.userForm, name="userform"),
     path('add/',couponview),
-    path('list/',couponvalidate),
+    path('validate/',couponvalidate),
     
     
     path('tool/',views.tool),

@@ -38,7 +38,7 @@ def login_user(request):
     if request.user.is_authenticated:
         print("User is logged in :)")
         print(f"Username --> {request.user.username}")
-        return redirect('validate')
+        return redirect('../validate')
     else:
         print("User is not logged in :()")
     
@@ -50,7 +50,7 @@ def login_user(request):
                 user = authenticate(username=username, password=password)
                 if user is not None :
                     login(request,user)
-                    return redirect('validate')
+                    return redirect('../validate')
                 else:
                     messages.error(request,"Invalid username or password")
             else:
