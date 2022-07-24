@@ -9,12 +9,6 @@ class CouponForm(ModelForm):
          model = Coupons1
          fields = '__all__'
 
-# Creating a form to add an article.
-# form = CouponForm()
-
-# Creating a form to change an existing article.
-# article = Coupons1.objects.get(pk=1)
-# form = CouponForm(instance=article)
 
 
 

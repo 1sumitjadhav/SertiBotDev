@@ -2,12 +2,9 @@
 import random
 import string
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse
 
-# Create your views here.
-# from django.conf.urls import url
-from coupons import serializers
 from coupons.models import Coupons1 
 from coupons import views 
 
@@ -47,7 +44,6 @@ from coupons.models import Coupons1
 def couponview(request):
     data = Coupons1.objects.all()
     form = CouponForm(request.POST or None)
-    print(request.POST)
     if form.is_valid():
         form.save()
         form = CouponForm()    
@@ -59,7 +55,7 @@ def couponview(request):
         itn=int(bulk)
         for i in range(itn):
             cp=''.join(random.choice(string.ascii_letters) for x in range(6))
-            Coupons1(coupons2 =cp ,discount='50',valid_for='24').save()
+            Coupons1(coupons2 =cp ,discount=random.randint(25,60),valid_for=random.randint(25,60)).save()
             
     context = {
         'data':data,
@@ -69,6 +65,13 @@ def couponview(request):
 
 
 def couponvalidate(request):
+    if request.user.is_authenticated:
+        print("User is logged in :)")
+        print(f"Username --> {request.user.username}")
+    else:
+        print("User is not logged in :()")
+        return redirect('/')
+    
     data = Coupons1.objects.all()
     check = request.POST.get('validate')
     status = 'invalid'
@@ -78,9 +81,10 @@ def couponvalidate(request):
             status = 'valid'
             dell =Coupons1.objects.get(id= all.id)
             dell.delete()
+            return redirect('/tool')
 
     
-    return render(request,"couponslist.html",{'data':data,'check':check,'status':status})
+    return render(request,"couponsvalidate.html",{'data':data,'check':check,'status':status})
 
 
 
@@ -88,6 +92,6 @@ def couponvalidate(request):
 def coupondelet(id):
     data = Coupons1.objects.filter(id=id)
     data.delete()
-    # return render(request,"couponslist.html",{'data':data})
+    # return render(request,"couponsvalidate.html",{'data':data})
 
 

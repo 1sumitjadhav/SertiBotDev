@@ -28,7 +28,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index ,name='index'),
+    # path('', index ,name='index'),
+    path('', views.homePage,name='index'),
     path('accounts/',include('accounts.urls')),
     path('gen',include('Email_handler.urls')),
 
@@ -40,4 +41,6 @@ urlpatterns = [
     path('add/',couponview),
     path('list/',couponvalidate),
     
+    
+    path('tool/',views.tool),
 ]
