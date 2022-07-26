@@ -28,7 +28,7 @@ SECRET_KEY = ')$0mnl3ge)dhnrjpx1pk0cp6^wmtfqabhi#+h!+s5=&+t8=@g('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['65.2.33.239']
 
 
 # Application definition
@@ -42,14 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'rest_framework',
-    'form',
-    'coupons'
-=======
     'accounts',
-    'Email_handler',
->>>>>>> main
+    'coupons',
+    'Email_handler'
 ]
 
 MIDDLEWARE = [
@@ -96,17 +92,10 @@ WSGI_APPLICATION = 'SertiBotDev.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-<<<<<<< HEAD
-        'NAME': 'coupons',
-        'USER': 'postgres',
-        'PASSWORD': 'mudassir',
-        'HOST': '127.0.0.1',
-=======
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'database-1.ceouyqjgp0eq.us-east-1.rds.amazonaws.com',
->>>>>>> main
         'PORT': '5432',
     }
 
@@ -156,6 +145,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR, "static"
 ]
+
+STATIC_ROOT = 'var/www/Sertibot/assets'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mycareteam.tech'
