@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +10,22 @@
 </head>
 
 <body>
+=======
+{% extends 'base.html' %}
+
+{% block content %}
+>>>>>>> 4cbfd009d838652e1b0161a76f1362a44107cb9d
   <h2>university Registeration Form</h2>
   <form action="{% url 'university' %}" method="POST" novalidate>
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Register" class="btn btn-block btn-primary">
+<<<<<<< HEAD
 </body>
 
 </html>
+=======
+
+
+{% endblock %}
+>>>>>>> 4cbfd009d838652e1b0161a76f1362a44107cb9d

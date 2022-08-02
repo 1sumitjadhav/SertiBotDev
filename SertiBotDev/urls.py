@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path, include
 
 from accounts.views import success
@@ -25,17 +26,47 @@ from .import views
 
 
 
+=======
+<<<<<<< HEAD
+from django.db import router
+from django.urls import path , include
+from coupons.views import couponvalidate
+
+
+from coupons.views import couponview
+from . import views
+
+=======
+from django.urls import path, include
+from accounts.views import index
+
+
+>>>>>>> main
+>>>>>>> 4cbfd009d838652e1b0161a76f1362a44107cb9d
 
 
 urlpatterns = [
-    path('',views.homePage),
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('about-us/',views.aboutUS),
     path('course/',views.course),
     # path('welcome/',views.welcome,name='welcome'),
     path('userform/',views.userForm, name="userform"),
+<<<<<<< HEAD
     path('accounts/',include('accounts.urls')),
     path('success',views.success,name='success')
     
+=======
+    # path('coupons/',include('coupons.urls')),
+    path('add/',couponview),
+    path('list/',couponvalidate),
+=======
+    path('', index ,name='index'),
+    path('accounts/',include('accounts.urls')),
+    path('gen',include('Email_handler.urls')),
+
+    
+>>>>>>> main
+>>>>>>> 4cbfd009d838652e1b0161a76f1362a44107cb9d
     
 ]

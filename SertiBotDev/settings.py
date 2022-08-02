@@ -42,7 +42,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'accounts',
+=======
+<<<<<<< HEAD
+    'rest_framework',
+    'form',
+    'coupons'
+=======
+    'accounts',
+    'Email_handler',
+>>>>>>> main
+>>>>>>> 4cbfd009d838652e1b0161a76f1362a44107cb9d
 ]
 
 MIDDLEWARE = [
@@ -79,18 +90,43 @@ WSGI_APPLICATION = 'SertiBotDev.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+<<<<<<< HEAD
 
+=======
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+>>>>>>> 4cbfd009d838652e1b0161a76f1362a44107cb9d
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        'NAME': 'coupons',
+        'USER': 'postgres',
+        'PASSWORD': 'mudassir',
+        'HOST': '127.0.0.1',
+=======
+>>>>>>> 4cbfd009d838652e1b0161a76f1362a44107cb9d
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'database-1.ceouyqjgp0eq.us-east-1.rds.amazonaws.com',
+<<<<<<< HEAD
+=======
+>>>>>>> main
+>>>>>>> 4cbfd009d838652e1b0161a76f1362a44107cb9d
         'PORT': '5432',
     }
+
 }
+
+AUTH_USER_MODEL="accounts.User"
 
 
 AUTH_USER_MODEL="accounts.User"
@@ -138,3 +174,9 @@ STATICFILES_DIRS = [
     BASE_DIR, "static"
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mycareteam.tech'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'billing@mycareteam.tech'
+EMAIL_HOST_PASSWORD = 'KY)!zhw_6":3'
+EMAIL_USE_SSL = True
